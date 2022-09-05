@@ -36,7 +36,7 @@ public class Client implements Runnable {
     @Override
     public void run() {
         try {
-            // получаем потоки ввода и вывода GG
+            // получаем потоки ввода и вывода
             InputStream is = socket.getInputStream();
             OutputStream os = socket.getOutputStream();
 
