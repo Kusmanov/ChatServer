@@ -20,6 +20,7 @@ public class ChatServer {
         }
     }
 
+    // получаем список пользователей и сообщаем о них вызвавшему пользователю
     public static void getClients(String userName) {
         StringBuilder clientsString = new StringBuilder();
         clientsString.append("| ");
