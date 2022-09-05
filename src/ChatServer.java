@@ -14,7 +14,22 @@ public class ChatServer {
     // вызываем метод receive у каждого клиента для рассылки сообщения
     public static void sendAll(String message, String userName) {
         for (Client client : clients) {
-            client.receive(message, userName);
+            if (!userName.equals(client.getUserName())) {
+                client.receive(message, userName);
+            }
+        }
+    }
+
+    public static void getClients(String userName) {
+        StringBuilder clientsString = new StringBuilder();
+        clientsString.append("| ");
+        for (Client client : clients) {
+            clientsString.append(client.getUserName()).append(" | ");
+        }
+        for (Client client : clients) {
+            if (userName.equals(client.getUserName())) {
+                client.receive(clientsString.toString().trim(), "");
+            }
         }
     }
 
@@ -38,13 +53,22 @@ public class ChatServer {
 class Client implements Runnable {
     private final Socket socket;
     private PrintStream out;
+    private String userName;
+
+    public String getUserName() {
+        return userName;
+    }
 
     public Client(Socket socket) {
         this.socket = socket;
     }
 
     public void receive(String message, String userName) {
-        out.println(userName + ": " + message);
+        if (userName.equals("")) {
+            out.println(message + '\u0007');
+        } else {
+            out.println(userName + ": " + message + '\u0007');
+        }
     }
 
     @Override
@@ -61,13 +85,18 @@ class Client implements Runnable {
             // читаем из сети и пишем в сеть
             out.println("Welcome to chat!");
             out.println("What's your name?");
-            String userName = in.nextLine();
-            out.println("Hello, " + userName + "!" + " Chat is started! Type Ctrl-C to exit chat.");
+            userName = in.nextLine();
+            out.println("Hello, " + userName + "!" + " Chat is started! Type Ctrl-C to exit. Type \"SU\" to show users.");
             String input = in.nextLine();
             while (!input.equals(Character.toString('\u0003'))) {
-                ChatServer.sendAll(input, userName);
+                if (input.equals("SU")) {
+                    ChatServer.getClients(userName);
+                } else {
+                    ChatServer.sendAll(input, userName);
+                }
                 input = in.nextLine();
             }
+
             socket.close();
         } catch (IOException e) {
             e.printStackTrace();
