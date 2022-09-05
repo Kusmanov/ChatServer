@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aea33ccf-b95e-401d-9956-7d680fd8ca9b" name="Changes" comment="Fourth">
-      <change afterPath="$PROJECT_DIR$/src/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ChatServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChatServer.java" afterDir="false" />
-    </list>
+    <list default="true" id="aea33ccf-b95e-401d-9956-7d680fd8ca9b" name="Changes" comment="Fix showUsers method" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,7 +65,7 @@
       <option name="presentableId" value="Default" />
       <updated>1662366471381</updated>
       <workItem from="1662366472667" duration="7519000" />
-      <workItem from="1662376828318" duration="3453000" />
+      <workItem from="1662376828318" duration="3873000" />
     </task>
     <task id="LOCAL-00001" summary="First">
       <created>1662366581822</created>
@@ -99,7 +95,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662377140898</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Fis shuwUsers method">
+      <created>1662389994331</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1662389994331</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,6 +124,9 @@
     <MESSAGE value="Second" />
     <MESSAGE value="Third" />
     <MESSAGE value="Fourth" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fourth" />
+    <MESSAGE value="Fis shuwUsers method" />
+    <MESSAGE value="Fix shuwUsers method" />
+    <MESSAGE value="Fix showUsers method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix showUsers method" />
   </component>
 </project>
