@@ -21,7 +21,7 @@ public class ChatServer {
     }
 
     // получаем список пользователей и сообщаем о них вызвавшему пользователю
-    public static void getClients(String userName) {
+    public static void showUsers(String userName) {
         StringBuilder clientsString = new StringBuilder();
         clientsString.append("| ");
         for (Client client : clients) {
@@ -91,7 +91,7 @@ class Client implements Runnable {
             String input = in.nextLine();
             while (!input.equals(Character.toString('\u0003'))) {
                 if (input.equals("SU")) {
-                    ChatServer.getClients(userName);
+                    ChatServer.showUsers(userName);
                 } else {
                     ChatServer.sendAll(input, userName);
                 }
