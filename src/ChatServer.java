@@ -16,7 +16,7 @@ public class ChatServer {
         }
     }
 
-    // получаем список пользователей и сообщаем о них вызвавшему пользователю
+    // получаем список пользователей и сообщаем о них вызвавшему пользователю GG
     public static void showUsers(String userName) {
         StringBuilder clientsString = new StringBuilder();
         clientsString.append("| ");
